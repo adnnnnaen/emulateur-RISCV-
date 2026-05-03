@@ -1,0 +1,89 @@
+# ====================
+# Build artifacts
+# ====================
+build/
+build-*/
+out/
+cmake-build-*/
+
+
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.lib
+*.exp
+*.pdb
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+CMakeUserPresets.json
+CTestTestfile.cmake
+cmake_install.cmake
+compile_commands.json
+Testing/
+
+# clangd / clang-tidy / IDE C tooling
+.cache/
+.clangd/
+.ccls-cache/
+
+# ====================
+# Cross-compiled binaries (programs/)
+# ====================
+programs/**/*.elf
+programs/**/*.bin
+programs/**/*.lst
+programs/**/*.map
+programs/**/*.dump
+programs/**/*.hex
+
+# ====================
+# riscv-tests build artifacts (submodule)
+# ====================
+third_party/riscv-tests/isa/**/*.dump
+
+# ====================
+# Editors / IDEs
+# ====================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.history/
+
+# ====================
+# OS
+# ====================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ====================
+# Debug / dumps
+# ====================
+*.dSYM/
+core
+core.*
+*.stackdump
+
+# ====================
+# Logs / temp
+# ====================
+*.log
+tmp/
+.tmp/
+
+
+# ====================
+# docs internes
+# ====================
+docs
+# Claude Code internal
+.claude/

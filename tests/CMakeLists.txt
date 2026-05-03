@@ -1,0 +1,21 @@
+# Bibliothèque Unity (compilée comme objet partagé entre tests)
+add_library(unity STATIC unity/src/unity.c)
+target_include_directories(unity PUBLIC unity/src)
+
+# Helper pour ajouter un test : add_unity_test(<nom>)
+function(add_unity_test name)
+    add_executable(${name} ${name}.c)
+    target_link_libraries(${name} PRIVATE unity riscv_core)
+    add_test(NAME ${name} COMMAND ${name})
+endfunction()
+
+# Tous les tests Phase 1
+add_unity_test(test_smoke)
+add_unity_test(test_cpu)
+add_unity_test(test_memory)
+add_unity_test(test_decoder)
+add_unity_test(test_executor_alu)
+add_unity_test(test_executor_loadstore)
+add_unity_test(test_executor_branch)
+add_unity_test(test_executor_jump)
+add_unity_test(test_cpu_step)
